@@ -1,0 +1,97 @@
+/* Styles pour le cadre de l'image */
+.image-frame {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles pour l'image */
+.image-frame img {
+    max-width: 100%;   /* Assure que l'image ne dépasse pas la largeur du conteneur */
+    max-height: 100x; /* Définit une hauteur maximale pour l'image */
+    width: auto;       /* Maintient le ratio d'aspect de l'image */
+    height: auto;      /* Maintient le ratio d'aspect de l'image */
+}
+/* Style for the page title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000; /* Ensure the title color is black */
+}
+
+/* Styles for the table container */
+.table-container {
+    margin-top: 20px;
+}
+
+.table {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styles */
+thead th {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+}
+
+/* Table body styles */
+tbody td {
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+
+/* Edit button styles */
+.btn-edit {
+    background-color: #007bff;
+    border: none;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+/* Delete button styles */
+.btn-delete {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+        .profile-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .profile-info .info-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .profile-info .info-value {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .btn-change-password {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+

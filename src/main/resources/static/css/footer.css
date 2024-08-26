@@ -1,0 +1,20 @@
+/* Styles pour le footer */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0; /* Augmenter l'espace autour du texte pour plus de visibilité */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0; /* Assure qu'il n'y a pas de marges autour du footer */
+}
+
+.footer .copyright {
+    margin: 0;
+    font-size: 1.2rem; /* Ajuster la taille de la police si nécessaire */
+}
+
+.footer .copyright i {
+    margin-right: 5px;
+}

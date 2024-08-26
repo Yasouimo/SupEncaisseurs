@@ -1,0 +1,79 @@
+/* Styles pour la navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center;            /* Alignement vertical centré */
+    background-color: #343a40;
+    padding: 10px 20px;
+}
+
+/* Styles pour le logo dans la navbar */
+.navbar-logo {
+    height: 50px; /* Ajuster la hauteur du logo */
+    width: auto;  /* Maintenir la largeur proportionnelle */
+    margin-right: 10px; /* Espacement entre le logo et le texte */
+}
+
+/* Styles pour le titre dans la navbar */
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Alignement vertical du logo et du texte */
+}
+
+/* Styles pour le bouton d'ajout */
+.btn-add-user {
+    background-color: #000; /* Noir de fond */
+    color: #fff; /* Texte blanc */
+    border: 1px solid #000; /* Bordure noire */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 5px 10px; /* Ajuster l'espacement */
+    font-size: 1rem; /* Taille de police */
+    display: flex;
+    align-items: center; /* Alignement vertical du texte et de l'icône */
+}
+
+.btn-add-user:hover {
+    background-color: #333; /* Noir légèrement plus clair au survol */
+    border-color: #333; /* Correspond au fond au survol */
+}
+
+.btn-add-user i {
+    margin-right: 5px; /* Espacement entre l'icône et le texte */
+}
+
+/* Styles pour le tableau des utilisateurs */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+/* Styles pour les boutons d'action dans le tableau */
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+    border: 1px solid #ffc107;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: 1px solid #dc3545;
+}
+
+.btn-warning:hover, .btn-danger:hover {
+    opacity: 0.8;
+}

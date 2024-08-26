@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Editer un Superviseur</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Inclure le fichier CSS principal -->
+</head>
+<body>
+    <!-- Inclusion du header -->
+    <div th:insert="~{fragments/header :: header}"></div>
+    <div class="container">
+        <h2>Éditer un Superviseur</h2>
+        <form th:action="@{/updateSuperviseur}" th:object="${superviseur}" method="post">
+            <!-- CSRF Token -->
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            
+            <!-- Champ caché pour l'ID du superviseur -->
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="Entrez le prénom" >
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" class="form-control" id="lastName" th:field="*{lastName}" placeholder="Entrez le nom">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Entrez l'email">
+            </div>
+            <div class="form-group">
+                <label for="agence">Agence</label>
+                <select class="form-control" id="agence" th:field="*{agence}">
+                    <option th:each="agence : ${listAgences}" th:value="${agence.id}" th:text="${agence.nomAgence}">Agence</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        </form>
+        <div th:insert="~{fragments/footer :: footer}"></div>
+    </div>
+</body>
+</html>

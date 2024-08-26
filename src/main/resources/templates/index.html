@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Gestion des Superviseurs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Inclure le fichier CSS principal -->
+    <script>
+        function resetFilter() {
+            // Redirect to the base URL to reset the filter
+            window.location.href = "/";
+        }
+    </script>
+</head>
+<body>
+    <!-- Inclusion du header -->
+    <div th:insert="~{fragments/header :: header}"></div>
+
+    <div class="container my-2">
+        <div class="image-frame">
+            <img src="/images/radem-logo.png" alt="RADEM Logo">
+        </div>
+        <h1>Gestion des Superviseurs</h1>
+
+        <!-- Flash Messages -->
+        <div th:if="${successMessage}" class="alert alert-success" role="alert" th:text="${successMessage}"></div>
+        <div th:if="${error}" class="alert alert-danger" role="alert" th:text="${error}"></div>
+
+        <!-- Filter Form with CSRF Token -->
+        <form method="get" action="/" class="mb-3">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label class="sr-only" for="agenceSelect">Agence</label>
+                    <select class="custom-select" id="agenceSelect" name="agenceId">
+                        <option value="">Tous les agences</option>
+                        <option th:each="agence : ${listAgences}" th:value="${agence.id}" th:text="${agence.nomAgence}" th:selected="${agence.id == agenceId}"></option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Filtrer</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter()">Annuler</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Table to Display Supervisors -->
+        <div class="table-container">
+            <table class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Agence</th>
+                        <!-- Conditionally render the Actions column header for MANAGER role -->
+                        <th sec:authorize="hasRole('ROLE_MANAGER')">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="superviseur : ${listSuperviseur}">
+                        <td th:text="${superviseur.firstName}"></td>
+                        <td th:text="${superviseur.lastName}"></td>
+                        <td th:text="${superviseur.email}"></td>
+                        <td th:text="${superviseur.agence.nomAgence}"></td>
+                        <!-- Conditionally render the Actions column for MANAGER role -->
+                        <td sec:authorize="hasRole('ROLE_MANAGER')">
+                            <a th:href="@{/editSuperviseur/{id}(id=${superviseur.id})}" class="btn btn-edit btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a th:href="@{/deleteSuperviseur/{id}(id=${superviseur.id})}" class="btn btn-delete btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ?')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Inclusion du footer -->
+        <div th:insert="~{fragments/footer :: footer}"></div>
+    </div> 
+</body>
+</html>

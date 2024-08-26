@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Ajouter un Superviseur</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Inclure le fichier CSS principal -->
+</head>
+<body>
+   <!-- Inclusion du headermanager -->
+   <div th:insert="~{fragments/header :: header}"></div>
+
+    <div class="container my-2">
+        <h2>Ajouter un Superviseur</h2>
+        <form th:action="@{/saveSuperviseur}" th:object="${superviseur}" method="post">
+            <!-- CSRF Token -->
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="Entrez le prénom">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" class="form-control" id="lastName" th:field="*{lastName}" placeholder="Entrez le nom">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Entrez l'email">
+            </div>
+            <div class="form-group">
+                <label for="agence">Agence</label>
+                <select class="form-control" id="agence" th:field="*{agence}">
+                    <option th:each="agence : ${listAgences}" th:value="${agence.id}" th:text="${agence.nomAgence}">Agence</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form> 
+        <!-- Inclusion du footer -->
+        <div th:insert="~{fragments/footer :: footer}"></div>
+    </div>
+    
+</body>
+</html>

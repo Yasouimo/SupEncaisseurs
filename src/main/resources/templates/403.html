@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/css/403.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Oops!</h1>
+        <p>403 Permission Denied</p>
+        <p>Sorry, you do not have access to this page, please contact your administrator.</p>
+
+        <!-- Redirect button for ADMIN role -->
+        <a sec:authorize="hasRole('ROLE_ADMIN')" href="/users" class="redirect-button">Go to User Management</a>
+
+        <!-- Redirect button for other roles -->
+        <a sec:authorize="hasRole('ROLE_MANAGER') or hasRole('ROLE_USER')" href="/" class="redirect-button">Go Back Home</a>
+    </div>
+</body>
+</html>

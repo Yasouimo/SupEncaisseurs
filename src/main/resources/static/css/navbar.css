@@ -1,0 +1,71 @@
+/* Styles pour le logo dans la navbar */
+.navbar-logo {
+    height: 50px !important; /* Ajuster la hauteur du logo */
+    width: auto !important;  /* Maintenir la largeur proportionnelle */
+    margin-right: 10px;      /* Espacement entre le logo et le texte */
+}
+
+/* Autres styles pour la navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* Aligner tous les éléments vers la gauche */
+    align-items: center;         /* Alignement vertical centré */
+    background-color: #343a40;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Alignement vertical du logo et du texte */
+    margin-right: 20px;  /* Ajouter de l'espace entre le logo et les boutons */
+}
+
+.navbar-brand:hover {
+    color: #ffffff;
+}
+
+/* Style pour les éléments de la navbar */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 10px; /* Espacement entre les boutons */
+}
+
+/* Style pour le bouton d'ajout */
+.btn-add-superviseur {
+    background-color: #000; /* Noir de fond pour correspondre au design */
+    color: #fff; /* Texte blanc */
+    border: 1px solid #000; /* Bordure noire */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 5px 10px; /* Ajuster l'espacement */
+    font-size: 1rem; /* Taille de police */
+    display: flex;
+    align-items: center; /* Alignement vertical centré */
+}
+
+.btn-add-superviseur:hover {
+    background-color: #333; /* Noir légèrement plus clair au survol */
+    border-color: #333; /* Correspond au fond au survol */
+}
+
+.btn-add-superviseur i {
+    margin-right: 5px; /* Espacement entre l'icône et le texte */
+}
+
+        /* Custom styles for the logout link */
+        .nav-link {
+            font-size: 1rem;
+            color: white;
+        }
+        .nav-link i {
+            margin-right: 0.5rem;
+        }
+        .nav-link:hover {
+            color: #ddd;
+        }
