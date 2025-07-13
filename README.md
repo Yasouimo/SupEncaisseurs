@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # RADEM Supervisor Management System
 
 A comprehensive web application built with Spring Boot to streamline supervisor management across RADEM agencies in Meknes, Morocco.
@@ -166,23 +165,3 @@ Special thanks to **Mr. AMAR Ahmed** for his guidance and supervision throughout
 
 *This application demonstrates the implementation of a scalable, secure, and maintainable web application using modern Spring Boot technologies with a focus on user experience and system security.*
 
-=======
-App Overview:
-
-Login Page
-
-![login](https://github.com/user-attachments/assets/bae160cd-faf1-4cea-9c83-1f8c9e934c35)
-
-Main Page Admin
-
-![accueil](https://github.com/user-attachments/assets/7fbe97d4-429e-4df8-8b5c-2927267d6a5f)
-
-Main Page Manager
-
-![main manager](https://github.com/user-attachments/assets/5e61d347-adf2-4ad8-81de-bfa61a4384a2)
-
-Main Page User
-
-![main user](https://github.com/user-attachments/assets/4a86559f-2c01-49c7-a129-5b2de1c43ba5)
-
->>>>>>> 4cb9e27f0ed900b818bb36b4b08b46cdab6e7442
