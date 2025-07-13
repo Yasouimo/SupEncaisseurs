@@ -148,7 +148,7 @@ The application uses the following main entities:
 
 ## 👥 Team
 
-**Developer**: [Your Name]  
+**Developer**: BELLMIR Yahya  
 **Supervisor**: Mr. AMAR Ahmed  
 **Organization**: RADEM Meknes  
 **Duration**: August 2024 - September 2024  
