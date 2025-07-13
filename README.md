@@ -62,7 +62,7 @@ This web application was developed during an internship at RADEM Meknes (August 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Yasouimo/SupEncaisseurs.git
    cd springboot-radem
    ```
 
