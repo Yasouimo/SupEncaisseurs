@@ -1,4 +1,4 @@
-# RADEM Supervisor Management System 
+# RADEM Supervisor Management System
 
 A comprehensive web application built with Spring Boot to streamline supervisor management across RADEM agencies in Meknes, Morocco.
 
