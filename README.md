@@ -84,6 +84,27 @@ This web application was developed during an internship at RADEM Meknes (August 
    - Navigate to `http://localhost:8080`
    - Use the login credentials for your assigned role
 
+## 🐳 Docker Deployment
+
+The application is available as a Docker image for quick deployment.
+
+### Quick Start with Docker
+
+1. **Pull and run the Docker image**
+   ```bash
+   docker run -d -p 8080:8080 --name radem-supervisor yasouimo14/radem-supervisor:latest
+   ```
+
+2. **Access the application**
+   - Navigate to `http://localhost:8080`
+   - The application will be ready to use immediately
+
+### Docker Commands
+
+- **Stop the container**: `docker stop radem-supervisor`
+- **Start the container**: `docker start radem-supervisor`
+- **Remove the container**: `docker rm radem-supervisor`
+
 ## 📁 Project Structure
 
 ```
